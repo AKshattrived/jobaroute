@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
+import { Navigate } from "react-router-dom";
 
 export default function About() {
+  const [user, setUser] = useState("mario");
+
+  if (!user) {
+    return <Navigate to="/" replace={true} />;
+  }
   return (
     <div>
       <h2>About Us</h2>
@@ -25,6 +31,8 @@ export default function About() {
         ipsa ratione voluptas eligendi delectus dolorum velit fugiat
         perferendis, culpa fuga distinctio. Quia, tempore beatae!
       </p>
+
+      <button onClick={() => setUser(null)}>Logout</button>
     </div>
   );
 }
