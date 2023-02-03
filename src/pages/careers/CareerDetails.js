@@ -23,7 +23,7 @@ export default function CareerDetails() {
 }
 
 export const careerDetailsLoader = async ({ params }) => {
-  //json-server -p 4000 -w ./data/db.json
+  //*json-server -p 4000 -w ./data/db.json
   const { id } = params;
   const res = await fetch("http://localhost:4000/careers/" + id);
 
